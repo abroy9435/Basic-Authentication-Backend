@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 text-white flex flex-col justify-center items-center">
+      <h3 class="text-3xl mb-3">Create a User</h3>
+      <form  class="flex flex-col w-70 justify-center items-center" action="/create" method="post">
+        <input class="px-3 py-2 my-1 rounded-md bg-white-500 border-2 border-zinc-800 outline-none" type="text" placeholder="username" name="username">
+        <input class="px-3 py-2 my-1 rounded-md bg-white-500 border-2 border-zinc-800 outline-none" type="email" placeholder="email" name="email">
+        <input class="px-3 py-2 my-1 rounded-md bg-white-500 border-2 border-zinc-800 outline-none" type="password" placeholder="password" name="password">
+        <input class="px-3 py-2 my-1 rounded-md bg-white-500 border-2 border-zinc-800 outline-none" type="number" placeholder="age" name="age">
+        <input class="px-5 py-2 my-1 rounded-md bg-blue-500 hover:bg-blue-700 cursor-pointer" type="submit" value="Create User">
+      </form>
+      <form action="/" method="get">
+        <input class="px-5 py-2 cursor-pointer text-xs hover:text-gray-500" type="submit" value="Already have an account? Login">
+      </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+</head>
+<body class="cursor-wait">
+    <div class="w-full h-screen flex flex-col items-center justify-center bg-zinc-900 text-white">
+      <h3 class="text-3xl mb-3">You Logged out!!</h3>
+      <h1 class="text-xs mb-3">Redirecting...</h1>
+    </div>
+
+</body>
+<script>
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 2000);
+</script>
+</html>
