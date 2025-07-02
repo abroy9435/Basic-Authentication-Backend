@@ -1,4 +1,6 @@
 //requiring and setting things
+require('dotenv').config();
+
 const express= require('express');
 const app= express();
 const userModel = require("./models/user")
@@ -7,6 +9,13 @@ const bcrypt = require('bcrypt');
 const jwt = require ('jsonwebtoken');
 const path= require('path');
 const cookieParser= require('cookie-parser');
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("✅ Connected to MongoDB"))
+.catch((err) => console.log("❌ Connection Error:", err));
 
 app.use(cookieParser());
 app.set("view engine", "ejs");
