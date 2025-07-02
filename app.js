@@ -4,6 +4,7 @@ require('dotenv').config();
 const express= require('express');
 const app= express();
 const userModel = require("./models/user")
+const mongoose = require('mongoose'); 
 
 const bcrypt = require('bcrypt');
 const jwt = require ('jsonwebtoken');
