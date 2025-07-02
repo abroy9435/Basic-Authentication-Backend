@@ -32,7 +32,10 @@ app.get("/create-user",(req,res)=>{
 });
 app.post("/create", (req,res)=>{
     let {username, email, password, age} = req.body;
-    
+    if (!username || !email || !password || !age) {
+        return res.redirect("/e-re-create")
+    }
+
     bcrypt.genSalt(10, (err,salt)=>{
         bcrypt.hash(password, salt,async (err, hash)=>{
             let createdUser = await userModel.create({
@@ -51,6 +54,9 @@ app.post("/create", (req,res)=>{
     
 })
 
+app.get("/e-re-create",(req,res)=>{
+    res.render("creation_error")
+})
 app.get("/successful-creation",(req,res)=>{
     res.render('creation_success')
 })
